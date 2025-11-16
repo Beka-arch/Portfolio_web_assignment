@@ -1,17 +1,18 @@
 body{
     font-family: 'Poppins', sans-serif;
+    background-color: black;
     
 }
 
 .container{
-  background-color: gray;
+  background-color: black;
   display: flex;
     margin: auto;
     padding-bottom: 20%;
     padding-left: 0%;
     padding-right: 12%;
     padding-top: 5%;
-    gap: 20px;
+    gap: 120px;
     
 }
 
