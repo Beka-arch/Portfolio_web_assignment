@@ -109,7 +109,37 @@ i{
     border-radius: 20px;
 }
 
+/* Styling for the container that holds the four game cards */
+.game-list {
+    display: flex; /* Enables Flexbox */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line on small screens */
+    justify-content: space-between; /* Distributes space between the cards */
+    gap: 15px; /* Adds spacing between the cards */
+    margin-top: 20px; /* Space below the paragraph */
+}
 
+/* Styling for the individual game card box */
+.game-card {
+    background-color: rgb(36, 32, 32); /* Slightly lighter background than .main-txt */
+    padding: 15px;
+    border-radius: 10px;
+    
+    /* ⬇️ KEY FIX: Defines the width for four items per row ⬇️ */
+    /* 25% of the parent width, minus a little for the gap */
+    width: calc(25% - 12px); 
+    
+    /* Ensures minimum size and equal height (if needed) */
+    min-height: 120px; 
+    
+    /* Ensure text within the card is readable */
+    font-size: 16px;
+}
+
+.game-card h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #f0f0f0;
+}
 
 /* Move menu bar to bottom earlier (max-width: 800px) */
 @media (max-width: 800px) {
