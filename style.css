@@ -141,6 +141,12 @@ i{
     color: #f0f0f0;
 }
 
+.game-pic{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 /* Move menu bar to bottom earlier (max-width: 800px) */
 @media (max-width: 800px) {
 
