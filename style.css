@@ -8,7 +8,7 @@ body{
   background-color: black;
   display: flex;
   flex-direction: column;
-    margin-top: 70px;
+    margin-top: 20px;
     padding-bottom: 20%;
     padding-left: 2%;
     padding-right: 12%;
@@ -46,6 +46,8 @@ body{
     margin-bottom: 10px
 }
 
+
+
 .menu-bar{
     background-color: rgb(36, 32, 32);
     position: fixed;
@@ -58,7 +60,7 @@ body{
     justify-content: space-around;
     flex-grow: 0;
     width: 60px;
-    height: 550px;
+    height: 600px;
     transition: width 0.6s ease;
 }
 
