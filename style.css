@@ -57,7 +57,7 @@ body{
     flex-direction: column;
     margin-left: 20px;
     padding: 10px;
-    justify-content: space-around;
+    gap: 30px;
     flex-grow: 0;
     width: 60px;
     height: 600px;
