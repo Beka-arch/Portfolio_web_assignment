@@ -94,6 +94,7 @@ body{
     width: 200px; 
     align-items: flex-start;
     border-radius: 30px;
+    justify-content: space-around;
 }
 
 .menu-bar:hover .menu-text {
