@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilisuma Ifaa | Portfolio</title>
-    <meta name="description" content="Portfolio of Bilisuma Ifaa">
+    <title>Abdulaziz | Portfolio</title>
+    <meta name="description" content="Portfolio of Abdulaziz">
     
     <style>
         /* --- Reset & Base Variables --- */
         :root {
-            --primary-color: #2563eb;     /* distinct blue */
-            --secondary-color: #1e293b;   /* dark slate */
+            /* ⬇️ UPDATED THEME: Dark Teal / Slate Gray ⬇️ */
+            --primary-color: #0d9488;    /* dark teal */
+            --secondary-color: #1f2937;    /* deep slate */
             --text-color: #334155;        /* slate gray */
-            --bg-color: #f8fafc;          /* very light gray */
+            --bg-color: #f8fafc;           /* very light gray */
             --white: #ffffff;
-            --accent: #0ea5e9;            /* sky blue */
+            --accent: #2dd4bf;             /* lighter teal */
             --transition: all 0.3s ease;
         }
 
@@ -113,7 +114,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            /* ⬇️ UPDATED BACKGROUND GRADIENT ⬇️ */
+            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%); 
             padding: 0 2rem;
             margin-top: 60px;
         }
@@ -243,7 +245,8 @@
         }
 
         .skill-tag {
-            background: #e0f2fe;
+            /* ⬇️ UPDATED TAG BACKGROUND ⬇️ */
+            background: #ccfbf1; 
             color: var(--primary-color);
             padding: 0.5rem 1rem;
             border-radius: 5px;
@@ -330,7 +333,8 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: #e0f2fe;
+            /* ⬇️ UPDATED ICON BACKGROUND ⬇️ */
+            background: #ccfbf1; 
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -399,16 +403,13 @@
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">BILISUMA.</a>
+            <a href="#" class="logo">ABDULAZIZ.</a>
             
-            <!-- CSS Only Toggle Mechanism -->
             <input type="checkbox" id="nav-toggle">
             <label for="nav-toggle" class="menu-icon">
-                &#9776; <!-- Hamburger Icon -->
-            </label>
+                &#9776; </label>
             
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -419,18 +420,16 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header id="home" class="hero">
         <div class="hero-content">
             <span class="hero-subtitle">Hello, I am</span>
-            <h1>Bilisuma Ifaa</h1>
+            <h1>Abdulaziz</h1>
             <p>A passionate Web Developer & Creative Thinker dedicated to building beautiful, functional, and user-friendly digital experiences.</p>
             <a href="#projects" class="btn">View My Work</a>
             <a href="#contact" class="btn btn-outline">Contact Me</a>
         </div>
     </header>
 
-    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -440,7 +439,7 @@
                 </div>
                 <div class="about-text">
                     <h3>I create solutions that matter.</h3>
-                    <p>My name is Bilisuma Ifaa, and I specialize in creating modern web interfaces. With a strong foundation in HTML, CSS, and modern design principles, I focus on writing clean, efficient code.</p>
+                    <p>My name is **Abdulaziz**, and I specialize in creating modern web interfaces. With a strong foundation in HTML, CSS, and modern design principles, I focus on writing clean, efficient code.</p>
                     <br>
                     <p>I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, I'm learning new technologies to improve my craft.</p>
                     
@@ -456,14 +455,12 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section bg-light">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
-                <!-- Project 1 -->
                 <article class="project-card">
-                 <img src="E-commerce-dashboard-1.png" alt="My Project" class="project-img">
+                   <img src="E-commerce-dashboard-1.png" alt="E-Commerce Dashboard" class="project-img">
                     <div class="project-content">
                         <h3>E-Commerce Dashboard</h3>
                         <p>A responsive dashboard layout designed for managing online store inventory and sales data.</p>
@@ -471,9 +468,8 @@
                     </div>
                 </article>
 
-                <!-- Project 2 -->
                 <article class="project-card">
-                    <img src="https://img.freepik.com/free-vector/flat-travel-agency-landing-page-template_23-2149377617.jpg" alt="My Project" class="project-img">
+                    <img src="https://img.freepik.com/free-vector/flat-travel-agency-landing-page-template_23-2149377617.jpg" alt="Travel Agency Landing Page" class="project-img">
                     <div class="project-content">
                         <h3>Travel Agency Landing Page</h3>
                         <p>A colorful and immersive landing page for a travel agency, featuring a CSS grid gallery.</p>
@@ -481,9 +477,8 @@
                     </div>
                 </article>
 
-                <!-- Project 3 -->
                 <article class="project-card">
-                    <img src="https://www.ionos.ca/digitalguide/fileadmin/_processed_/1/4/csm_creating-a-wordpress-blog_cd480eb5c1.webp" alt="My Project" class="project-img">
+                    <img src="https://www.ionos.ca/digitalguide/fileadmin/_processed_/1/4/csm_creating-a-wordpress-blog_cd480eb5c1.webp" alt="Personal Blog Template" class="project-img">
                     <div class="project-content">
                         <h3>Personal Blog Template</h3>
                         <p>A clean, minimalistic blog theme focused on typography and readability.</p>
@@ -494,7 +489,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container contact-container">
             <h2 class="section-title">Get In Touch</h2>
@@ -502,24 +496,21 @@
             
             <div class="contact-info">
                 <div class="contact-item">
-                    <div class="contact-icon">&#9993;</div> <!-- Envelope Unicode -->
-                    <p>billisuma@gmail.com</p>
+                    <div class="contact-icon">&#9993;</div> <p>**abdulaziz**@gmail.com</p>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">&#9742;</div> <!-- Phone Unicode -->
-                    <p>+123 456 7890</p>
+                    <div class="contact-icon">&#9742;</div> <p>+123 456 7890</p>
                 </div>
             </div>
             
             <div style="margin-top: 3rem;">
-                <a href="mailto:billisuma@gmail.com" class="btn">Say Hello</a>
+                <a href="mailto:abdulaziz@gmail.com" class="btn">Say Hello</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Bilisuma Ifaa. All Rights Reserved.</p>
+        <p>&copy; 2024 **Abdulaziz**. All Rights Reserved.</p>
     </footer>
 
 </body>
