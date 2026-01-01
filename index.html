@@ -3,515 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulaziz | Portfolio</title>
-    <meta name="description" content="Portfolio of Abdulaziz">
-    
+    <title>Simple Coding Partner Calculator</title>
     <style>
-        /* --- Reset & Base Variables --- */
-        :root {
-            /* ⬇️ UPDATED THEME: Dark Teal / Slate Gray ⬇️ */
-            --primary-color: #0d9488;    /* dark teal */
-            --secondary-color: #1f2937;    /* deep slate */
-            --text-color: #334155;        /* slate gray */
-            --bg-color: #f8fafc;           /* very light gray */
-            --white: #ffffff;
-            --accent: #2dd4bf;             /* lighter teal */
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        /* CSS: Styling the UI */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        /* --- Navigation --- */
-        .navbar {
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            position: relative;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: 1px;
-            z-index: 1001; /* Keeps logo above menu */
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* --- Mobile Menu Logic (No JS) --- */
-        
-        /* 1. Hide the actual checkbox input */
-        #nav-toggle {
-            display: none;
-        }
-
-        /* 2. Style the label to look like a hamburger button */
-        .menu-icon {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            user-select: none;
-            z-index: 1001; /* Keeps button above menu */
-        }
-
-        /* --- Hero Section --- */
-        .hero {
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* ⬇️ UPDATED BACKGROUND GRADIENT ⬇️ */
-            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%); 
-            padding: 0 2rem;
-            margin-top: 60px;
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
         }
 
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-subtitle {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--secondary-color);
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            color: #64748b;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--secondary-color);
-            border: 2px solid var(--secondary-color);
-            margin-left: 1rem;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        /* --- About Section --- */
-        .section {
-            padding: 5rem 2rem;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-img-wrapper {
-            position: relative;
-        }
-
-        .about-img {
-            width: 100%;
-            height: 400px;
-            background-color: #cbd5e1;
+        .calculator {
+            background-color: #222;
+            padding: 20px;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            font-size: 1.2rem;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
         }
 
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .skill-tag {
-            /* ⬇️ UPDATED TAG BACKGROUND ⬇️ */
-            background: #ccfbf1; 
-            color: var(--primary-color);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* --- Projects Section --- */
-        .bg-light {
-            background-color: #f1f5f9;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        }
-
-        .project-img {
+        #display {
             width: 100%;
-            height: auto;
-            background-color: #94a3b8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            border-bottom: 2px solid transparent;
-        }
-
-        .project-link:hover {
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        /* --- Contact Section --- */
-        .contact-container {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-icon {
-            width: 50px;
             height: 50px;
-            /* ⬇️ UPDATED ICON BACKGROUND ⬇️ */
-            background: #ccfbf1; 
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            background: #eee;
+            border-radius: 5px;
         }
 
-        /* --- Footer --- */
-        footer {
-            background: var(--secondary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
         }
 
-        /* --- Animations --- */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        button {
+            padding: 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
         }
 
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: block; /* Show hamburger on mobile */
-            }
+        button:hover {
+            background-color: #ddd;
+        }
 
-            .nav-links {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 100%; /* Position right below the header */
-                left: 0;
-                width: 100%;
-                background: var(--white);
-                padding: 1rem 0;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                text-align: center;
-            }
+        .operator {
+            background-color: #f39c12;
+            color: white;
+        }
 
-            /* 3. When checkbox is checked, show the sibling .nav-links */
-            #nav-toggle:checked ~ .nav-links {
-                display: flex;
-            }
+        .operator:hover {
+            background-color: #e67e22;
+        }
 
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+        .equals {
+            background-color: #27ae60;
+            color: white;
+            grid-column: span 2;
+        }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-img {
-                height: 300px;
-            }
+        .clear {
+            background-color: #c0392b;
+            color: white;
+            grid-column: span 2;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">ABDULAZIZ.</a>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            <button class="operator" onclick="appendToDisplay('*')">×</button>
             
-            <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" class="menu-icon">
-                &#9776; </label>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
             
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <span class="hero-subtitle">Hello, I am</span>
-            <h1>Abdulaziz</h1>
-            <p>A passionate Web Developer & Creative Thinker dedicated to building beautiful, functional, and user-friendly digital experiences.</p>
-            <a href="#projects" class="btn">View My Work</a>
-            <a href="#contact" class="btn btn-outline">Contact Me</a>
-        </div>
-    </header>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1624314138470-5a2f24623f10?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWRkaXMlMjBhYmFiYSUyQyUyMGV0aGlvcGlhfGVufDB8fDB8fHww" alt="My Project" class="about-img">
-                </div>
-                <div class="about-text">
-                    <h3>I create solutions that matter.</h3>
-                    <p>My name is Abdulaziz, and I specialize in creating modern web interfaces. With a strong foundation in HTML, CSS, and modern design principles, I focus on writing clean, efficient code.</p>
-                    <br>
-                    <p>I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, I'm learning new technologies to improve my craft.</p>
-                    
-                    <div class="skills-container">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Responsive Design</span>
-                        <span class="skill-tag">UI/UX</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <article class="project-card">
-                   <img src="E-commerce-dashboard-1.png" alt="E-Commerce Dashboard" class="project-img">
-                    <div class="project-content">
-                        <h3>E-Commerce Dashboard</h3>
-                        <p>A responsive dashboard layout designed for managing online store inventory and sales data.</p>
-                        <a href="#" class="project-link">View Project &rarr;</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <img src="https://img.freepik.com/free-vector/flat-travel-agency-landing-page-template_23-2149377617.jpg" alt="Travel Agency Landing Page" class="project-img">
-                    <div class="project-content">
-                        <h3>Travel Agency Landing Page</h3>
-                        <p>A colorful and immersive landing page for a travel agency, featuring a CSS grid gallery.</p>
-                        <a href="#" class="project-link">View Project &rarr;</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <img src="https://www.ionos.ca/digitalguide/fileadmin/_processed_/1/4/csm_creating-a-wordpress-blog_cd480eb5c1.webp" alt="Personal Blog Template" class="project-img">
-                    <div class="project-content">
-                        <h3>Personal Blog Template</h3>
-                        <p>A clean, minimalistic blog theme focused on typography and readability.</p>
-                        <a href="#" class="project-link">View Project &rarr;</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container contact-container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p>I am currently available for freelance work or new opportunities. Send me an email and let's discuss your next project!</p>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
             
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">&#9993;</div> <p>abdulaziz@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">&#9742;</div> <p>+123 456 7890</p>
-                </div>
-            </div>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="calculate()">=</button>
             
-            <div style="margin-top: 3rem;">
-                <a href="mailto:abdulaziz@gmail.com" class="btn">Say Hello</a>
-            </div>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equals" onclick="calculate()">Enter</button>
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Abdulaziz. All Rights Reserved.</p>
-    </footer>
+    <script>
+        // JavaScript: Handling Logic
+        const display = document.getElementById('display');
 
+        // Adds the clicked button value to the display string
+        function appendToDisplay(input) {
+            display.value += input;
+        }
+
+        // Clears the entire display
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        // Uses the eval function to calculate the mathematical string
+        function calculate() {
+            try {
+                // eval() takes a string (like "2+2") and computes it
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = "Error";
+            }
+        }
+    </script>
 </body>
 </html>
